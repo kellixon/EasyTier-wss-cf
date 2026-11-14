@@ -9,10 +9,10 @@ EASYTIER_DISABLE_RELAY = "0"
 EASYTIER_COMPRESS_RPC = "0"
 LOCATION_HINT = "eeur"
 
-# [durable_objects]
-# bindings = [
-#   { name = "RELAY_ROOM", class_name = "RelayRoom" }
-# ]
+[durable_objects]
+bindings = [
+   { name = "RELAY_ROOM", class_name = "RelayRoom" }
+]
 
 [[migrations]]
 tag = "v1"
@@ -36,3 +36,7 @@ head_sampling_rate = 1
 [[migrations]]
 tag = "v2"
 deleted_classes = ["RelayRoom"]
+
+[[migrations]]
+tag = "v3"
+new_sqlite_classes = ["RelayRoom"]
