@@ -32,3 +32,7 @@ invocation_logs = true
 enabled = false
 persist = true
 head_sampling_rate = 1
+
+[[migrations]]
+tag = "v2"
+deleted_classes = ["RelayRoom"]
