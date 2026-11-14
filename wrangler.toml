@@ -8,16 +8,12 @@ WS_PATH = "ws"
 EASYTIER_DISABLE_RELAY = "0"
 EASYTIER_COMPRESS_RPC = "0"
 LOCATION_HINT = "eeur"
-# Set ADMIN_PASSWORD as a Secret in the Cloudflare dashboard (Workers > Settings > Variables)
-# Do NOT commit your real password here.
-# ADMIN_PASSWORD is set via Cloudflare secret; do not commit actual password
 
-[durable_objects]
-bindings = [
-  { name = "RELAY_ROOM", class_name = "RelayRoom" }
-]
+# [durable_objects]
+# bindings = [
+#   { name = "RELAY_ROOM", class_name = "RelayRoom" }
+# ]
 
-# v1: fresh deployment — create RelayRoom only
 [[migrations]]
 tag = "v1"
 new_sqlite_classes = ["RelayRoom"]
@@ -36,7 +32,3 @@ invocation_logs = true
 enabled = false
 persist = true
 head_sampling_rate = 1
-
-[[migrations]]
-tag = "v2"
-deleted_classes = ["RelayRoom"]
